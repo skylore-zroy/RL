@@ -1,0 +1,13 @@
+.git/
+.bootstrap/
+.venv/
+venv/
+.docker/
+validation_results/
+outputs/
+logs/
+runs/
+checkpoints/
+**/__pycache__/
+**/*.pyc
+wget-log*

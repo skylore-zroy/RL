@@ -1,0 +1,24 @@
+# Local/editor state
+.DS_Store
+.bootstrap/
+.docker/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Generated experiment and validation output
+validation_results/
+outputs/
+logs/
+runs/
+checkpoints/
+*.pt
+*.pth
+
+# Download residue and credentials
+wget-log*
+.env
+*.key
+*.pem

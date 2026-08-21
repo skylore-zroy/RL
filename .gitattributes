@@ -1,0 +1,16 @@
+* text=auto
+
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.py text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.ps1 text eol=crlf
+
+# Preserve upstream simulation assets byte-for-byte.
+models/cod_balance/mjcf/*.xml -text
+models/cod_balance/mjcf/*.STL -text
+models/cod_balance/usd/*.usd -text
+models/cod_balance/reference/*.png -text

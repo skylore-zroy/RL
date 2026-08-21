@@ -1,0 +1,37 @@
+name: cod-rl
+
+services:
+  isaac-validate:
+    build:
+      context: .
+      dockerfile: docker/isaacsim/Dockerfile
+    image: cod-isaac-lab:2.2.0-local
+    profiles: ["isaac"]
+    gpus: all
+    ipc: host
+    network_mode: host
+    volumes:
+      - ./validation_results:/workspace/validation_results
+      - isaac-kit-cache:/isaac-sim/kit/cache
+      - isaac-ov-cache:/root/.cache/ov
+      - isaac-pip-cache:/root/.cache/pip
+      - isaac-gl-cache:/root/.cache/nvidia/GLCache
+      - isaac-compute-cache:/root/.nv/ComputeCache
+      - isaac-logs:/root/.nvidia-omniverse/logs
+
+  mujoco-validate:
+    build:
+      context: .
+      dockerfile: docker/mujoco/Dockerfile
+    image: cod-mujoco:3.2.6-local
+    profiles: ["mujoco"]
+    volumes:
+      - ./validation_results:/workspace/validation_results
+
+volumes:
+  isaac-kit-cache:
+  isaac-ov-cache:
+  isaac-pip-cache:
+  isaac-gl-cache:
+  isaac-compute-cache:
+  isaac-logs:
